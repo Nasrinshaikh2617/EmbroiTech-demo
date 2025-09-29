@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EmbroiTech — AI Embroidery Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">🧵 <strong>EmbroiTech</strong></div>
+
+    <div class="search-area">
+      <input id="searchBar" placeholder="Search designs, clothes, styles (e.g., 'kurti', 'mirror work')" />
+      <button id="clearSearch" title="Clear search">✖</button>
+    </div>
+
+    <div class="actions">
+      <div class="category-buttons" id="categoryButtons"></div>
+      <button id="cartButton" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="sidebar">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label><input type="checkbox" class="filter" value="floral" /> Floral</label>
+        <label><input type="checkbox" class="filter" value="geometric" /> Geometric</label>
+        <label><input type="checkbox" class="filter" value="mirror" /> Mirror Work</label>
+        <label><input type="checkbox" class="filter" value="kurti" /> Kurti</label>
+        <label><input type="checkbox" class="filter" value="anarkali" /> Anarkali</label>
+        <label><input type="checkbox" class="filter" value="traditional" /> Saree / Lehenga</label>
+        <label><input type="checkbox" class="filter" value="modern" /> Modern</label>
+      </div>
+
+      <hr/>
+      <h4>Sort</h4>
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="name-asc">Name A → Z</option>
+        <option value="name-desc">Name Z → A</option>
+      </select>
+
+      <hr/>
+      <h4>Quick demo notes</h4>
+      <p style="font-size:13px">This is a static demo for your viva. Cart & orders are stored in browser localStorage.</p>
+    </aside>
+
+    <section class="catalog">
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeCart">✖</button>
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-summary">
+        <div>Subtotal: ₹ <span id="cartSubtotal">0</span></div>
+        <div class="cart-actions">
+          <button id="continueShopping">Continue Shopping</button>
+          <button id="checkoutBtn" class="primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeCheckout">✖</button>
+      <h2>Checkout</h2>
+      <form id="checkoutForm">
+        <label>Full Name<input name="name" required /></label>
+        <label>Email<input name="email" type="email" required /></label>
+        <label>Phone<input name="phone" required /></label>
+        <label>Address<textarea name="address" rows="3" required></textarea></label>
+        <div style="margin-top:8px; text-align:right">
+          <button type="button" id="backToCart">Back</button>
+          <button type="submit" id="placeOrder" class="primary">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="orderModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeOrder">✖</button>
+      <h2>Order Confirmed ✅</h2>
+      <div id="orderDetails"></div>
+      <div style="text-align:right; margin-top:12px;">
+        <button id="orderDone" class="primary">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © 2025 EmbroiTech — Demo platform for mid-semester viva
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
