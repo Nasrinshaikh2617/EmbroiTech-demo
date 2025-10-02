@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmbroiTech - Online Embroidery Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🧵 EmbroiTech</h1>
+    <input type="text" id="searchBar" placeholder="Search designs (e.g., kurti, floral, anarkali)...">
+    
+    <nav>
+      <a href="login.html">Login</a> |
+      <a href="signup.html">Signup</a>
+      <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <!-- Horizontal Filters -->
+  <div class="filter-bar">
+    <label><input type="checkbox" class="filter" value="floral"> Floral</label>
+    <label><input type="checkbox" class="filter" value="geometric"> Geometric</label>
+    <label><input type="checkbox" class="filter" value="mirror"> Mirror Work</label>
+    <label><input type="checkbox" class="filter" value="kurti"> Kurti</label>
+    <label><input type="checkbox" class="filter" value="anarkali"> Anarkali</label>
+    <label><input type="checkbox" class="filter" value="saree"> Saree</label>
+    <label><input type="checkbox" class="filter" value="lehenga"> Lehenga</label>
+  </div>
+
+  <main>
+    <!-- Dashboard -->
+    <section class="dashboard" id="designGrid"></section>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar">
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <button id="checkoutBtn">Place Order</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
